@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import Button from './components/UI/Button/Button';
 import DemoOutput from './components/demo/DemoOutput';
+
 
 import './App.css';
 
@@ -10,9 +11,9 @@ function App() {
 
   console.log('App running!');
 
-  const showParagraphHandler = () => {
+  const showParagraphHandler = useCallback(() => {
     setShowParagraph((prevShow) => !prevShow);
-  }
+  }, []);
 
   return (
     <div className="app">
